@@ -70,6 +70,8 @@ EOF
 # Initiating installation of OpenShift Container Platform using Ansible Playbook
 echo $(date) " - Installing OpenShift Container Platform via Ansible Playbook"
 
+rm /usr/share/ansible/openshift-ansible/roles/etcd/tasks/system_container.yml
+
 runuser -l $SUDOUSER -c "ansible-playbook /usr/share/ansible/openshift-ansible/playbooks/byo/config.yml"
 
 echo $(date) " - Modifying sudoers"
