@@ -2,7 +2,7 @@
     "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-        "_artifactsLocation": {
+        "baseuri": {
             "type": "string",
             "metadata": {
                 "description": "Base URL for script location"
@@ -65,7 +65,7 @@
         }
     },
     "variables": {
-        "openshiftDeploymentScriptUrl": "[concat(parameters('_artifactsLocation'), '/scripts/deployOpenShift.sh')]",
+        "openshiftDeploymentScriptUrl": "[concat(parameters('baseuri'), '/scripts/deployOpenShift.sh')]",
         "openshiftDeploymentScriptFileName": "deployOpenShift.sh"
     },
     "resources": [
